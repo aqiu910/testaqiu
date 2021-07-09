@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <!-- 验证密码和确认密码得css样式-->
+    <style>
+        
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        .message1 {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        .wrong {
+            color: red;
+            background-image: url(images/wrong.png);
+        }
+        
+        .right {
+            color: green;
+            background-image: url(images/right.png);
+        }
+        .wrong1 {
+            color: red;
+            background-image: url(images/wrong.png);
+        }
+        
+        .right1 {
+            color: green;
+            background-image: url(images/right.png);
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部开始-->
+    <div class="header">
+        <!-- 导航栏-->
+        <div class="headertop_desc">
+            <div class="wrap">
+                <div class="nav_list">
+                    <ul>
+                        <li><a href="index.html">家</a></li>
+                        <li><a href="contact.html">网站地图</a></li>
+                        <li><a href="movie.html">试看</a></li>
+                    </ul>
+                </div>
+                <div class="account_desc">
+                    <ul>
+                        <li><a href="register.html">注册</a></li>
+                        <li><a href="login.html">登录</a></li>
+                        <li><a href="preview.html">预览</a></li>
+                        <li><a href="contact.html">联系</a></li>
+                        <li><a href="details.html">详情</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="header_top">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                </div>
+                <div class="header_top_right">
+                    <div class="cart">
+                        <p>
+                            <span>购物车</span><div id="dd" class="wrapper-dropdown-2">
+                                <ul class="dropdown">
+                                    <li>你的购物车中没有商品</li>
+                                </ul>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="search_box">
+                        <form>
+                            <input type="text" value="搜索电影" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+                        </form>
+                    </div>
+
+                </div>
+                <!-- 购物车下拉js函数-->
+                <script type="text/javascript">
+                    function DropDown(el) {
+                        this.dd = el;
+                        this.initEvents();
+                    }
+                    DropDown.prototype = {
+                        initEvents: function () {
+                            var obj = this;
+
+                            obj.dd.on('click', function (event) {
+                                $(this).toggleClass('active');
+                                event.stopPropagation();
+                            });
+                        }
+                    }
+
+                    $(function () {
+
+                        var dd = new DropDown($('#dd'));
+
+                        $(document).click(function () {
+                            // all dropdowns
+                            $('.wrapper-dropdown-2').removeClass('active');
+                        });
+
+                    });
+                </script>
+                <!-- 函数结束-->
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 中间注册部分-->
+    <div class="main">
+        <div class="wrap">
+            <div class="content">
+                <div class="content_top">
+                    <div class="back-links">
+                        <p><a href="index.html">首页</a> &gt;&gt; <a href="#" class="active">请您注册哦亲！</a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="section group">
+                    <div class="col span_2_of_3">
+                        <div class="contact-form">
+                            <h2 class="page-header">注册</h2>
+                            <form method="post" action="contact-post.html" class="form-horizontal">
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">用户名：</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" placeholder="请输入您的用户名">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                                    <div class="col-sm-4" >
+                                        <input type="password" class="form-control" id="ipt11" placeholder="请输入您的密码">
+                                    </div>
+                                    <div class="col-sm-4" style="padding-top:10px;padding-left:10px;"><p class="message">请输入6~16位密码</p></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">确认密码：</label>
+                                    <div class="col-sm-4">
+                                        <input type="password" class="form-control" id="ipt12"  placeholder="请您输入确认密码">
+                                    </div>
+                                    <div class="col-sm-4" style="padding-top:10px;padding-left:10px;"><p class="message1">确认密码得与密码相同</p></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">性&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+                                    <div class="col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="radio" name="sex"> 帅哥
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="sex"> 美女
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control" placeholder="请您输入您的邮箱">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="col-sm-offset-1 col-sm-10">
+                                        <button type="submit" class="btn btn-default">注册</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col span_1_of_3">
+                        <div class="contact_info">
+                            <h2>猜您想看</h2>
+                            <div class="map">
+                                <img src="images/1.jpg" title="泰坦之怒"/>
+                            </div>
+                        </div>
+                        <div class="company_address">
+                            <h2>信息：</h2>
+                            <p>从前有只小怪兽</p>
+                            <p>她喜欢上了奥特曼</p>
+                            <p>但是奥特曼喜欢打小怪兽</p>
+                            <p>可是一打小怪兽</p>
+                            <p>小怪兽就会委屈</p>
+                            <p>如果想知道后续，请点击下面购票</p>
+                            <p>购票: <span><a href="#">漂亮的小姐姐帅气的小哥哥都喜欢点我</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 注册部分结束-->
+
+    <!--页尾部分-->
+    <div class="footer">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>信息</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">客户服务</a></li>
+                        <li><a href="#">高级搜素</a></li>
+                        <li><a href="#">订单和退货</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>为什么向我们购买</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">客户服务</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="contact.html">网站地图</a></li>
+                        <li><a href="#">搜寻字词</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>我的账户</h4>
+                    <ul>
+                        <li><a href="#">登录</a></li>
+                        <li><a href="index.html">查看购物车</a></li>
+                        <li><a href="#">我的收藏</a></li>
+                        <li><a href="#">查看物流</a></li>
+                        <li><a href="contact.html">帮助</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><span>+13570509484</span></li>
+                        <li><span>+00-123-000000</span></li>
+                    </ul>
+                    <div class="social-icons">
+                        <h4>跟着我们</h4>
+                        <ul>
+                            <li><a href="#" target="_blank"><img src="images/facebook.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"><img src="images/twitter.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"><img src="images/skype.png" alt="" /> </a></li>
+                            <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt="" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copy_right">
+                <p><a target="_blank" href="https://www.miibeian.gov.cn" class="gray_a">京ICP备14030359号</a>/<a target="_blank" href="https://beian.gov.cn/" class="gray_a"><img src="https://st-cn.meishij.net/p2/20180208/20180208111357_93713.png" />京公网安备11010802026928</a> Copyright © 2003-2020 MEISHIJ CO.,LTD.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 首先判断的事件是表单失去焦点 onblur
+        // 如果输入正确则提示正确的信息颜色为绿色小图标变化
+        // 如果输入不是6到16位，则提示错误信息颜色为红色 小图标变化
+        // 因为里面变化样式较多，我们采取className修改样式
+        // 1.获取元素
+        var ipt11 = document.querySelector('#ipt11');
+        var message = document.querySelector('.message');
+        //2. 注册事件 失去焦点
+        ipt11.onblur = function () {
+            // 根据表单里面值的长度 ipt.value.length
+            if (this.value.length < 6 || this.value.length > 16) {
+                
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对要求6~16位';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        }
+
+        // 1.获取元素
+        var ipt12 = document.querySelector('#ipt12');
+        var message1 = document.querySelector('.message1');
+        //2. 注册事件 失去焦点
+        ipt12.onblur = function () {
+            // 根据表单里面值的长度 ipt.value.length
+            if (this.value!==ipt11.value) {
+                message1.className = 'message1 wrong1';
+                message1.innerHTML = '密码不一致，请重新输入';
+            } else {
+                message1.className = 'message1 right1';
+                message1.innerHTML = '密码一致，可以注册';
+            }
+        }
+    </script>
+</body>
+</html>
